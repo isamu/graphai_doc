@@ -5,10 +5,10 @@ GraphAIで使うAgentの作り方の説明をします。
 Agentは、Agentの本体とそれをテストするテストコードで構成されます。
 Agentの本体をsrc/以下(今回は[src/sample_agent.ts](./src/sample_agent.ts)), Agentのテストコードをtest/以下(今回は[tests/test_agent.ts](./tests/test_agent.ts))に作ります。
 
-今回作成するAgentはSampleAgentという名前です。
-動作は、GraphAIからの入力値(設定ファイルのparams)のparamsと、前のagentからの入力値inputs、この２つの値をmergeしてobjectとして返す簡単なAgentです。
+今回作成するAgentは`SampleAgent`という名前です。
+動作は、GraphAIからの入力値(設定ファイルのparams)の`params`と、前のagentからの入力値`inputs`、この２つの値をmergeしてobjectとして返す簡単なAgentです。
 
-### agent
+### Agent
 
 Agentの本体はこちらです。
 
@@ -21,7 +21,7 @@ export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
 ```
 
 Agentは必ず`AgentFunction`の型で、非同期(async)な関数です。
-最初の説明にあったように、paramsと入力をとって、それを返すだけのコードです。
+最初の説明にあったように、`params`と入力をとって、それを返すだけのコードです。
 
 どんなAgentも基本的にはこのように入力値を受け取って、何らかの結果を返す１つの関数です。
 
@@ -30,12 +30,14 @@ Agentは必ず`AgentFunction`の型で、非同期(async)な関数です。
 ```
 // for test and document
 ```
-以下にテストとドキュメント用のサンプル値と、このAgentの情報(AgentFunctionInfo)を記載しています。
+以下にテストとドキュメント用のサンプル値と、このAgentの情報(`AgentFunctionInfo`)を記載しています。
 サンプル値はAgentの情報に含め、まとめてexportします。
 
 このサンプル値はunit testで使い、Agentの情報はこのAgentをパッケージとして利用するときに必要な情報を記載しています。
 
-AgentFunctionInfoはdefault exportします
+`AgentFunctionInfo`は`default export`します
+
+Agentのファイルは、agent単体のagentをexportし、agentを含むパッケージ情報(`AgentFunctionInfo`)をdefaule exportします。
 
 ```typescript
 import { AgentFunctionInfo } from "graphai/lib/type";
@@ -66,7 +68,8 @@ export default sampleAgentInfo;
 ```
 
 複数のサンプル値を用意する場合は
-```
+
+```typescript
   samples: [
     {
       inputs: sampleInput,
@@ -82,7 +85,18 @@ export default sampleAgentInfo;
 ```
 とします。
 
-# test
+# Unit Test
+
+Agentのパッケージの情報を使ってAgent単体のUnit Testをします。
+Agentファイルを読み込み、GraphAIに含まれるagentTestRunnerでUnit Testを実行します。
+この関数は、内部で`node:test`を実行します
+
+```typescript
+import sampleAgentInfo from "@/sample_agent";
+import { agentTestRunner } from "graphai/lib/utils/test_utils";
+
+agentTestRunner(sampleAgentInfo);
+```
 
 tests/test_agent.ts で、agentのファイルに記載されている情報を元にunit test。
 
