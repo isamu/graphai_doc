@@ -37,7 +37,7 @@ Agentは必ず`AgentFunction`の型で、非同期(`async`)な関数です。
 
 `AgentFunctionInfo`は`default export`します
 
-Agentのファイルは、agent単体のagentをexportし、agentを含むパッケージ情報(`AgentFunctionInfo`)をdefaule exportします。
+Agentのファイルは、agent単体のagentを`export`し、agentを含むパッケージ情報(`AgentFunctionInfo`)を`defaule export`します。
 
 ```typescript
 import { AgentFunctionInfo } from "graphai/lib/type";
@@ -107,6 +107,16 @@ yarn run test
 ```
 
 でテストを実行します。
+
+
+# 開発
+
+最初にAgentを開発するとき、このディレクトリをコピーし、ベースとして使うと良いです。
+Agent作成に必要な設定は `package.json`, `eslintrc.js`, `.prettierrc`, `tsconfig.json` に設定済みです
+
+`src/sample_agent.ts`をベースに必要な実装を追加していき、期待すべき`samples`を更新、追加しながらUnit Testを動かします。
+Unit TestをPassし、期待すべき動作がするようになればAgentは完成です。
+
 
 
 
