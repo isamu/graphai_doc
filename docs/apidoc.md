@@ -25,7 +25,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## nestedAgent
 
 ### Description
@@ -53,7 +57,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## stringEmbeddingsAgent
 
 ### Description
@@ -81,7 +89,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## tokenBoundStringsAgent
 
 ### Description
@@ -109,7 +121,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## mapAgent
 
 ### Description
@@ -137,7 +153,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## stringSplitterAgent
 
 ### Description
@@ -192,7 +212,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## stringTemplateAgent
 
 ### Description
@@ -233,7 +257,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## sleeperAgent
 
 ### Description
@@ -261,7 +289,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## sleeperAgentDebug
 
 ### Description
@@ -289,7 +321,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## totalAgent
 
 ### Description
@@ -370,7 +406,11 @@ https://github.com/snakajima/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## dataObjectMergeTemplateAgent
 
 ### Description
@@ -421,7 +461,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## dataSumTemplateAgent
 
 ### Description
@@ -459,7 +503,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## pushAgent
 
 ### Description
@@ -487,7 +535,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## popAgent
 
 ### Description
@@ -515,7 +567,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## shiftAgent
 
 ### Description
@@ -543,7 +599,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## dotProductAgent
 
 ### Description
@@ -571,7 +631,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## sortByValuesAgent
 
 ### Description
@@ -599,7 +663,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## echoAgent
 
 ### Description
@@ -627,7 +695,11 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
 ## bypassAgent
 
 ### Description
@@ -655,4 +727,8 @@ https://github.com/receptron/graphai
 MIT
 
 
+
+
 <hr/>
+
+
