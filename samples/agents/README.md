@@ -20,7 +20,7 @@ export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
 };
 ```
 
-Agentは必ず`AgentFunction`の型で、非同期(async)な関数です。
+Agentは必ず`AgentFunction`の型で、非同期(`async`)な関数です。
 最初の説明にあったように、`params`と入力をとって、それを返すだけのコードです。
 
 どんなAgentも基本的にはこのように入力値を受け取って、何らかの結果を返す１つの関数です。
@@ -31,7 +31,7 @@ Agentは必ず`AgentFunction`の型で、非同期(async)な関数です。
 // for test and document
 ```
 以下にテストとドキュメント用のサンプル値と、このAgentの情報(`AgentFunctionInfo`)を記載しています。
-サンプル値はAgentの情報に含め、まとめてexportします。
+サンプル値はAgentの情報に含め、まとめて`export`します。
 
 このサンプル値はunit testで使い、Agentの情報はこのAgentをパッケージとして利用するときに必要な情報を記載しています。
 
