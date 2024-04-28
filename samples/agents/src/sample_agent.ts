@@ -1,4 +1,5 @@
 import { AgentFunction } from "graphai";
+import { AgentFunctionInfo } from "graphai/lib/type";
 
 export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
   return { params, inputs };
@@ -10,7 +11,7 @@ const sampleInput = [{message: "hello"}, {message: "test"}];
 const sampleParams = { sample: "123" };
 const sampleResult = { inputs: sampleInput, params: sampleParams };
 
-const sampleAgentInfo = {
+const sampleAgentInfo: AgentFunctionInfo = {
   name: "sampleAgent",
   agent: sampleAgent,
   mock: sampleAgent,
