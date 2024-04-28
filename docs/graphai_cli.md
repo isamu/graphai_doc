@@ -21,21 +21,26 @@ $ graphai
 ```
 
 ```
-graphai <yaml_file>
+graphai_cli.ts <yaml_or_json_file>
 
-run GraphAI with yaml GraphAI file.
+run GraphAI with GraphAI file.
+
+Positionals:
+      --yaml_or_json_file  yaml or json file                            [文字列]
 
 オプション:
       --help     ヘルプを表示                                             [真偽]
       --version  バージョンを表示                                         [真偽]
   -l, --list     agents list
-
-オプションではない引数が 0 個では不足しています。少なくとも 1 個の引数が必要です:
+  -s, --sample   agents list                                            [文字列]
+  -d, --detail   agent detail                                           [文字列]
+  -v, --verbose  verbose log                   [真偽] [必須] [デフォルト: false]
+      --log      output log                                             [文字列]
 ```
 
 ### 実行
 
-yamlのファイル名を指定すると、そのファイルに書かれているData flow graphが実行されます。
+yamlかjsonのファイル名を指定すると、そのファイルに書かれているData flow graphが実行されます。
 
 ```
 $ graphai test_base.yml 
@@ -71,27 +76,23 @@ $ graphai -l
 
 ```
 Available Agents
-- bypassAgent
-- copy2ArrayAgent
-- copyMessageAgent
-- countingAgent
-- dataObjectMergeTemplateAgent
-- dataSumTemplateAgent
-- dotProductAgent
-- echoAgent
-- mapAgent
-- mergeNodeIdAgent
-- nestedAgent
-- popAgent
-- pushAgent
-- shiftAgent
-- slashGPTAgent
-- sleeperAgent
-- sleeperAgentDebug
-- sortByValuesAgent
-- stringEmbeddingsAgent
-- stringSplitterAgent
-- stringTemplateAgent
-- tokenBoundStringsAgent
-- totalAgent
+* bypassAgent - bypass agent
+* dataObjectMergeTemplateAgent - Merge object
+* dataSumTemplateAgent - Returns the sum of input values
+* dotProductAgent - dotProduct Agent
+* echoAgent - Echo agent
+* mapAgent - Map Agent
+* nestedAgent - nested Agent
+* popAgent - pop Agent
+* pushAgent - push Agent
+* shiftAgent - shift Agent
+* slashGPTAgent - Slash GPT Agent
+* sleeperAgent - sleeper Agent
+* sleeperAgentDebug - sleeper debug Agent
+* sortByValuesAgent - sortByValues Agent
+* stringEmbeddingsAgent - Embeddings Agent
+* stringSplitterAgent - This agent strip one long string into chunks using following parameters
+* stringTemplateAgent - Template agent
+* tokenBoundStringsAgent - token bound Agent
+* totalAgent - Returns the sum of input values
 ```
