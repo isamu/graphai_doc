@@ -65,6 +65,23 @@ export default sampleAgentInfo;
 
 ```
 
+複数のサンプル値を用意する場合は
+```
+  samples: [
+    {
+      inputs: sampleInput,
+      params: sampleParams,
+      result: sampleResult,
+    },
+    {
+      inputs: sampleInput2,
+      params: sampleParams2,
+      result: sampleResult2,
+    },
+  ],
+```
+とします。
+
 # test
 
 tests/test_agent.ts で、agentのファイルに記載されている情報を元にunit test。
