@@ -1,11 +1,14 @@
 # sampleのagentを作る
 
 graphaiで使うagentの作り方の説明をします。
-agentのソースをsrc/以下の [src/sample_agent.ts](./src/sample_agent.ts), agentのテストコードをtest以下の[tests/test_agent.ts]に作ります。
 
-agentは  のsampleAgent。
+Agentは、Agentの本体とそれをテストするテストコードで構成されます。
+Agentの本体をsrc/以下(今回は[src/sample_agent.ts](./src/sample_agent.ts)), Agentのテストコードをtest/以下(今回は[tests/test_agent.ts](./tests/test_agent.ts))に作ります。
 
-graphの入力値, paramsと、前のagentからの入力値inputsを、objectとして返すagent
+今回作成するAgentはSampleAgentという名前です。
+動作は、GraphAIからの入力値(設定ファイルのparams)のparamsと、前のagentからの入力値inputs、この２つの値をmergeしてobjectとして返す簡単なAgentです。
+
+
 
 // for test and document
 
