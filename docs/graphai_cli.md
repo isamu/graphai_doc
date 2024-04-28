@@ -1,6 +1,6 @@
 # GraphAI cli
 
-graphai_cliは、graphaiをcliで実行するツールです。
+[graphai_cli](https://www.npmjs.com/package/graphai_cli)は、[graphai](https://github.com/receptron/graphai)をcliで実行するツールです。
 
 インストールは
 
