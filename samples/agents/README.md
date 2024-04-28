@@ -1,6 +1,6 @@
-# sampleのagentを作る
+# SampleのAgentを作る
 
-graphaiで使うagentの作り方の説明をします。
+GraphAIで使うAgentの作り方の説明をします。
 
 Agentは、Agentの本体とそれをテストするテストコードで構成されます。
 Agentの本体をsrc/以下(今回は[src/sample_agent.ts](./src/sample_agent.ts)), Agentのテストコードをtest/以下(今回は[tests/test_agent.ts](./tests/test_agent.ts))に作ります。
@@ -12,7 +12,7 @@ Agentの本体をsrc/以下(今回は[src/sample_agent.ts](./src/sample_agent.ts
 
 Agentの本体はこちらです。
 
-```
+```typescript
 import { AgentFunction } from "graphai";
 
 export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
@@ -37,7 +37,7 @@ Agentは必ず`AgentFunction`の型で、非同期(async)な関数です。
 
 AgentFunctionInfoはdefault exportします
 
-```
+```typescript
 import { AgentFunctionInfo } from "graphai/lib/type";
 
 const sampleInput = [{message: "hello"}, {message: "test"}];
