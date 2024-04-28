@@ -7,7 +7,7 @@ export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
 
 // for test and document
 
-const sampleInput = [{message: "hello"}, {message: "test"}];
+const sampleInput = [{ message: "hello" }, { message: "test" }];
 const sampleParams = { sample: "123" };
 const sampleResult = { inputs: sampleInput, params: sampleParams };
 
