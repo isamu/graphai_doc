@@ -91,6 +91,7 @@ Agentのパッケージの情報を使ってAgent単体のUnit Testをします�
 GraphAIに含まれるagentTestRunnerにsampleAgentInfoを渡してUnit Testを実行します。
 agentTestRunnerは、sampleAgentInfoに含まれるサンプル値を使ってAgentを実行します。
 この関数は、内部で`node:test`を使っています。
+inputs, paramsのペアを使ってAgentを実行、結果とresultが一致すればテストは成功です。
 
 ```typescript
 import sampleAgentInfo from "@/sample_agent";
@@ -99,15 +100,14 @@ import { agentTestRunner } from "graphai/lib/utils/test_utils";
 agentTestRunner(sampleAgentInfo);
 ```
 
-
-tests/test_agent.ts で、agentのファイルに記載されている情報を元にunit test。
-
-params,inputsをagentに与えて、resultと一致するかテストをする
+package.jsonにテスト実行のスクリプトがあるので
 
 ```
 yarn run test
 ```
 
-でテストをする
+でテストを実行します。
+
+
 
 
