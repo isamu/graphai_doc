@@ -1,3 +1,5 @@
+yarn run v1.22.21
+$ npx ts-node -r tsconfig-paths/register src/docs.ts
 ## slashGPTAgent
 
 ### Description
@@ -25,42 +27,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
-
-## nestedAgent
-
-### Description
-
-nested Agent
-
-### Samples
-
-```json
-[]
-```
-
-
-### Author
-
-Receptron team
-
-### Repository
-
-https://github.com/receptron/graphai
-
-
-### License
-
-MIT
-
-
-
-
-<hr/>
-
 
 ## stringEmbeddingsAgent
 
@@ -89,10 +56,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## tokenBoundStringsAgent
 
@@ -121,42 +85,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
-
-## mapAgent
-
-### Description
-
-Map Agent
-
-### Samples
-
-```json
-[]
-```
-
-
-### Author
-
-Receptron team
-
-### Repository
-
-https://github.com/receptron/graphai
-
-
-### License
-
-MIT
-
-
-
-
-<hr/>
-
 
 ## stringSplitterAgent
 
@@ -212,10 +141,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## stringTemplateAgent
 
@@ -257,10 +183,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## sleeperAgent
 
@@ -289,10 +212,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## sleeperAgentDebug
 
@@ -321,10 +241,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## totalAgent
 
@@ -406,10 +323,7 @@ https://github.com/snakajima/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## dataObjectMergeTemplateAgent
 
@@ -439,8 +353,62 @@ Merge object
     ],
     "params": {},
     "result": {
-      "a": 6,
-      "b": 3
+      "a": 3,
+      "b": 0,
+      "c": 5
+    }
+  },
+  {
+    "inputs": [
+      {
+        "a": {
+          "b": {
+            "c": {
+              "d": "e"
+            }
+          }
+        }
+      },
+      {
+        "b": {
+          "c": {
+            "d": {
+              "e": "f"
+            }
+          }
+        }
+      },
+      {
+        "b": {
+          "d": {
+            "e": {
+              "f": "g"
+            }
+          }
+        }
+      }
+    ],
+    "params": {},
+    "result": {
+      "a": {
+        "b": {
+          "c": {
+            "d": "e"
+          }
+        }
+      },
+      "b": {
+        "c": {
+          "d": {
+            "e": "f"
+          }
+        },
+        "d": {
+          "e": {
+            "f": "g"
+          }
+        }
+      }
     }
   }
 ]
@@ -461,10 +429,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## dataSumTemplateAgent
 
@@ -503,10 +468,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## pushAgent
 
@@ -517,7 +479,23 @@ push Agent
 ### Samples
 
 ```json
-[]
+[
+  {
+    "inputs": [
+      [
+        1,
+        2
+      ],
+      3
+    ],
+    "params": {},
+    "result": [
+      1,
+      2,
+      3
+    ]
+  }
+]
 ```
 
 
@@ -535,21 +513,75 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## popAgent
 
 ### Description
 
-pop Agent
+Pop Agent
 
 ### Samples
 
 ```json
-[]
+[
+  {
+    "inputs": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "params": {},
+    "result": {
+      "array": [
+        1,
+        2
+      ],
+      "item": 3
+    }
+  },
+  {
+    "inputs": [
+      [
+        "a",
+        "b",
+        "c"
+      ]
+    ],
+    "params": {},
+    "result": {
+      "array": [
+        "a",
+        "b"
+      ],
+      "item": "c"
+    }
+  },
+  {
+    "inputs": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        "a",
+        "b",
+        "c"
+      ]
+    ],
+    "params": {},
+    "result": {
+      "array": [
+        1,
+        2
+      ],
+      "item": 3
+    }
+  }
+]
 ```
 
 
@@ -567,10 +599,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## shiftAgent
 
@@ -581,7 +610,42 @@ shift Agent
 ### Samples
 
 ```json
-[]
+[
+  {
+    "inputs": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "params": {},
+    "result": {
+      "array": [
+        2,
+        3
+      ],
+      "item": 1
+    }
+  },
+  {
+    "inputs": [
+      [
+        "a",
+        "b",
+        "c"
+      ]
+    ],
+    "params": {},
+    "result": {
+      "array": [
+        "b",
+        "c"
+      ],
+      "item": "a"
+    }
+  }
+]
 ```
 
 
@@ -599,10 +663,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## dotProductAgent
 
@@ -613,7 +674,40 @@ dotProduct Agent
 ### Samples
 
 ```json
-[]
+[
+  {
+    "inputs": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      [
+        [
+          3,
+          2
+        ]
+      ]
+    ],
+    "params": {},
+    "result": {
+      "contents": [
+        7,
+        17,
+        27
+      ]
+    }
+  }
+]
 ```
 
 
@@ -631,10 +725,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## sortByValuesAgent
 
@@ -663,10 +754,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## echoAgent
 
@@ -695,10 +783,7 @@ https://github.com/receptron/graphai
 MIT
 
 
-
-
 <hr/>
-
 
 ## bypassAgent
 
@@ -727,8 +812,64 @@ https://github.com/receptron/graphai
 MIT
 
 
+<hr/>
+
+## nestedAgent
+
+### Description
+
+nested Agent
+
+### Samples
+
+```json
+[]
+```
+
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
 
 
 <hr/>
 
+## mapAgent
 
+### Description
+
+Map Agent
+
+### Samples
+
+```json
+[]
+```
+
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+Done in 1.14s.
