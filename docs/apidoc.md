@@ -1,5 +1,3 @@
-yarn run v1.22.21
-$ npx ts-node -r tsconfig-paths/register src/docs.ts
 ## slashGPTAgent
 
 ### Description
@@ -8,9 +6,6 @@ Slash GPT Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -37,9 +32,6 @@ Embeddings Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -66,9 +58,6 @@ token bound Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -95,37 +84,29 @@ This agent strip one long string into chunks using following parameters
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      "Here's to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes ... the ones who see things differently -- they're not fond of rules, and they have no respect for the status quo. ... You can quote them, disagree with them, glorify or vilify them, but the only thing you can't do is ignore them because they change things. ... They push the human race forward, and while some may see them as the crazy ones, we see genius, because the people who are crazy enough to think that they can change the world, are the ones who do."
-    ],
-    "params": {
-      "chunkSize": 64
-    },
-    "result": {
-      "contents": [
-        "Here's to the crazy ones, the misfits, the rebels, the troublema",
-        "roublemakers, the round pegs in the square holes ... the ones wh",
-        " ones who see things differently -- they're not fond of rules, a",
-        "rules, and they have no respect for the status quo. ... You can ",
-        "You can quote them, disagree with them, glorify or vilify them, ",
-        "y them, but the only thing you can't do is ignore them because t",
-        "ecause they change things. ... They push the human race forward,",
-        "forward, and while some may see them as the crazy ones, we see g",
-        "we see genius, because the people who are crazy enough to think ",
-        "o think that they can change the world, are the ones who do.",
-        " do."
-      ],
-      "count": 11,
-      "chunkSize": 64,
-      "overlap": 8
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+["Here's to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes ... the ones who see things differently -- they're not fond of rules, and they have no respect for the status quo. ... You can quote them, disagree with them, glorify or vilify them, but the only thing you can't do is ignore them because they change things. ... They push the human race forward, and while some may see them as the crazy ones, we see genius, because the people who are crazy enough to think that they can change the world, are the ones who do."]
+
+````
+
+#### params
+
+```json
+
+{"chunkSize":64}
+
+````
+
+#### result
+
+```json
+
+{"contents":["Here's to the crazy ones, the misfits, the rebels, the troublema","roublemakers, the round pegs in the square holes ... the ones wh"," ones who see things differently -- they're not fond of rules, a","rules, and they have no respect for the status quo. ... You can ","You can quote them, disagree with them, glorify or vilify them, ","y them, but the only thing you can't do is ignore them because t","ecause they change things. ... They push the human race forward,","forward, and while some may see them as the crazy ones, we see g","we see genius, because the people who are crazy enough to think ","o think that they can change the world, are the ones who do."," do."],"count":11,"chunkSize":64,"overlap":8}
+
+````
 
 ### Author
 
@@ -151,23 +132,29 @@ Template agent
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      "hello",
-      "test"
-    ],
-    "params": {
-      "template": "${0}: ${1}"
-    },
-    "result": {
-      "content": "hello: test"
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+["hello","test"]
+
+````
+
+#### params
+
+```json
+
+{"template":"${0}: ${1}"}
+
+````
+
+#### result
+
+```json
+
+{"content":"hello: test"}
+
+````
 
 ### Author
 
@@ -193,9 +180,6 @@ sleeper Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -222,9 +206,6 @@ sleeper debug Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -251,63 +232,52 @@ Returns the sum of input values
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      {
-        "a": 1
-      },
-      {
-        "a": 2
-      },
-      {
-        "a": 3
-      }
-    ],
-    "params": {},
-    "result": {
-      "a": 6
-    }
-  },
-  {
-    "inputs": [
-      [
-        {
-          "a": 1,
-          "b": -1
-        },
-        {
-          "c": 10
-        }
-      ],
-      [
-        {
-          "a": 2,
-          "b": -1
-        }
-      ],
-      [
-        {
-          "a": 3,
-          "b": -2
-        },
-        {
-          "d": -10
-        }
-      ]
-    ],
-    "params": {},
-    "result": {
-      "a": 6,
-      "b": -4,
-      "c": 10,
-      "d": -10
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+[{"a":1},{"a":2},{"a":3}]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"a":6}
+
+````
+#### inputs
+
+```json
+
+[[{"a":1,"b":-1},{"c":10}],[{"a":2,"b":-1}],[{"a":3,"b":-2},{"d":-10}]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"a":6,"b":-4,"c":10,"d":-10}
+
+````
 
 ### Author
 
@@ -333,87 +303,52 @@ Merge object
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      {
-        "a": 1,
-        "b": 1
-      },
-      {
-        "a": 2,
-        "b": 2
-      },
-      {
-        "a": 3,
-        "b": 0,
-        "c": 5
-      }
-    ],
-    "params": {},
-    "result": {
-      "a": 3,
-      "b": 0,
-      "c": 5
-    }
-  },
-  {
-    "inputs": [
-      {
-        "a": {
-          "b": {
-            "c": {
-              "d": "e"
-            }
-          }
-        }
-      },
-      {
-        "b": {
-          "c": {
-            "d": {
-              "e": "f"
-            }
-          }
-        }
-      },
-      {
-        "b": {
-          "d": {
-            "e": {
-              "f": "g"
-            }
-          }
-        }
-      }
-    ],
-    "params": {},
-    "result": {
-      "a": {
-        "b": {
-          "c": {
-            "d": "e"
-          }
-        }
-      },
-      "b": {
-        "c": {
-          "d": {
-            "e": "f"
-          }
-        },
-        "d": {
-          "e": {
-            "f": "g"
-          }
-        }
-      }
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+[{"a":1,"b":1},{"a":2,"b":2},{"a":3,"b":0,"c":5}]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"a":3,"b":0,"c":5}
+
+````
+#### inputs
+
+```json
+
+[{"a":{"b":{"c":{"d":"e"}}}},{"b":{"c":{"d":{"e":"f"}}}},{"b":{"d":{"e":{"f":"g"}}}}]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"a":{"b":{"c":{"d":"e"}}},"b":{"c":{"d":{"e":"f"}},"d":{"e":{"f":"g"}}}}
+
+````
 
 ### Author
 
@@ -439,20 +374,29 @@ Returns the sum of input values
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      1,
-      2,
-      3
-    ],
-    "params": {},
-    "result": 6
-  }
-]
-```
+#### inputs
 
+```json
+
+[1,2,3]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+6
+
+````
 
 ### Author
 
@@ -478,26 +422,29 @@ push Agent
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      [
-        1,
-        2
-      ],
-      3
-    ],
-    "params": {},
-    "result": [
-      1,
-      2,
-      3
-    ]
-  }
-]
-```
+#### inputs
 
+```json
+
+[[1,2],3]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+[1,2,3]
+
+````
 
 ### Author
 
@@ -523,67 +470,75 @@ Pop Agent
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      [
-        1,
-        2,
-        3
-      ]
-    ],
-    "params": {},
-    "result": {
-      "array": [
-        1,
-        2
-      ],
-      "item": 3
-    }
-  },
-  {
-    "inputs": [
-      [
-        "a",
-        "b",
-        "c"
-      ]
-    ],
-    "params": {},
-    "result": {
-      "array": [
-        "a",
-        "b"
-      ],
-      "item": "c"
-    }
-  },
-  {
-    "inputs": [
-      [
-        1,
-        2,
-        3
-      ],
-      [
-        "a",
-        "b",
-        "c"
-      ]
-    ],
-    "params": {},
-    "result": {
-      "array": [
-        1,
-        2
-      ],
-      "item": 3
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+[[1,2,3]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"array":[1,2],"item":3}
+
+````
+#### inputs
+
+```json
+
+[["a","b","c"]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"array":["a","b"],"item":"c"}
+
+````
+#### inputs
+
+```json
+
+[[1,2,3],["a","b","c"]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"array":[1,2],"item":3}
+
+````
 
 ### Author
 
@@ -609,45 +564,52 @@ shift Agent
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      [
-        1,
-        2,
-        3
-      ]
-    ],
-    "params": {},
-    "result": {
-      "array": [
-        2,
-        3
-      ],
-      "item": 1
-    }
-  },
-  {
-    "inputs": [
-      [
-        "a",
-        "b",
-        "c"
-      ]
-    ],
-    "params": {},
-    "result": {
-      "array": [
-        "b",
-        "c"
-      ],
-      "item": "a"
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+[[1,2,3]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"array":[2,3],"item":1}
+
+````
+#### inputs
+
+```json
+
+[["a","b","c"]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"array":["b","c"],"item":"a"}
+
+````
 
 ### Author
 
@@ -673,43 +635,29 @@ dotProduct Agent
 
 ### Samples
 
-```json
-[
-  {
-    "inputs": [
-      [
-        [
-          1,
-          2
-        ],
-        [
-          3,
-          4
-        ],
-        [
-          5,
-          6
-        ]
-      ],
-      [
-        [
-          3,
-          2
-        ]
-      ]
-    ],
-    "params": {},
-    "result": {
-      "contents": [
-        7,
-        17,
-        27
-      ]
-    }
-  }
-]
-```
+#### inputs
 
+```json
+
+[[[1,2],[3,4],[5,6]],[[3,2]]]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"contents":[7,17,27]}
+
+````
 
 ### Author
 
@@ -735,9 +683,6 @@ sortByValues Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -764,9 +709,6 @@ Echo agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -793,9 +735,6 @@ bypass agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -822,9 +761,6 @@ nested Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -851,9 +787,6 @@ Map Agent
 
 ### Samples
 
-```json
-[]
-```
 
 
 ### Author
@@ -872,4 +805,4 @@ MIT
 
 <hr/>
 
-Done in 1.14s.
+Done in 1.05s.
