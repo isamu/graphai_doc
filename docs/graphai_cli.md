@@ -1,11 +1,11 @@
 # GraphAI cli
 
-[graphai_cli](https://www.npmjs.com/package/graphai_cli)は、[graphai](https://github.com/receptron/graphai)をcliで実行するツールです。
+[graphai_cli](https://www.npmjs.com/package/@receptron/graphai_cli)は、[graphai](https://github.com/receptron/graphai)をcliで実行するツールです。
 
 インストールは
 
 ```
-npm install -g graphai_cli
+npm install -g @receptron/graphai_cli
 ```
 
 です。nodeやnpmがインストールされてない場合は、最初にインストールしてください。
