@@ -1,0 +1,7 @@
+version: 0.2
+nodes:
+  node1: 
+    params:
+      message: hello
+    agent: echoAgent
+    isResult: true
