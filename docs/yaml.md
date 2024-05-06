@@ -102,3 +102,15 @@ node3の結果として、２つの入力値がそのまま出力されます
 
 inputsを持つagentは、入力となるnode1, node2のagentの実行結果を待ってから実行します。
 入力のagentがデータベースに接続したり、APIを叩くような時間のかかる処理の場合でも、その前の処理が終わるのを待ってから実行されます。
+
+## debug
+
+TBD
+
+## node
+
+nodeにはcomputed nodeとstatic nodeがあります。
+
+computed nodeは、agentを持つnodeで、agentに指定しているプログラムを実行します。
+
+static nodeはデータを持つノードです。valueでデータを指定します。いくつかの方法で前のノードなどの値を受け取り、次のnodeにわたすことができます。
