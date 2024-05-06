@@ -1,29 +1,3 @@
-## slashGPTAgent
-
-### Description
-
-Slash GPT Agent
-
-### Samples
-
-
-
-### Author
-
-Receptron team
-
-### Repository
-
-https://github.com/receptron/graphai
-
-
-### License
-
-MIT
-
-
-<hr/>
-
 ## stringEmbeddingsAgent
 
 ### Description
@@ -76,6 +50,86 @@ MIT
 
 <hr/>
 
+## functionAgent
+
+### Description
+
+It allows developers to implement the agent function within the graph itself.
+
+### Samples
+
+#### inputs
+
+```json
+
+[
+          {
+                    "model": "Model 3",
+                    "maker": "Tesla",
+                    "range": 300,
+                    "price": 35000
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+"A Tesla Model 3 has the range of 300 miles. It costs $35000."
+
+````
+#### inputs
+
+```json
+
+[
+          "{\"model\":\"Model 3\",\"maker\":\"Tesla\",\"range\":300,\"price\":35000}"
+]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"model":"Model 3","maker":"Tesla","range":300,"price":35000}
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
 ## stringSplitterAgent
 
 ### Description
@@ -88,7 +142,9 @@ This agent strip one long string into chunks using following parameters
 
 ```json
 
-["Here's to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes ... the ones who see things differently -- they're not fond of rules, and they have no respect for the status quo. ... You can quote them, disagree with them, glorify or vilify them, but the only thing you can't do is ignore them because they change things. ... They push the human race forward, and while some may see them as the crazy ones, we see genius, because the people who are crazy enough to think that they can change the world, are the ones who do."]
+[
+          "Here's to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes ... the ones who see things differently -- they're not fond of rules, and they have no respect for the status quo. ... You can quote them, disagree with them, glorify or vilify them, but the only thing you can't do is ignore them because they change things. ... They push the human race forward, and while some may see them as the crazy ones, we see genius, because the people who are crazy enough to think that they can change the world, are the ones who do."
+]
 
 ````
 
@@ -136,7 +192,10 @@ Template agent
 
 ```json
 
-["hello","test"]
+[
+          "hello",
+          "test"
+]
 
 ````
 
@@ -152,7 +211,7 @@ Template agent
 
 ```json
 
-{"content":"hello: test"}
+"hello: test"
 
 ````
 
@@ -236,7 +295,17 @@ Returns the sum of input values
 
 ```json
 
-[{"a":1},{"a":2},{"a":3}]
+[
+          {
+                    "a": 1
+          },
+          {
+                    "a": 2
+          },
+          {
+                    "a": 3
+          }
+]
 
 ````
 
@@ -259,7 +328,32 @@ Returns the sum of input values
 
 ```json
 
-[[{"a":1,"b":-1},{"c":10}],[{"a":2,"b":-1}],[{"a":3,"b":-2},{"d":-10}]]
+[
+          [
+                    {
+                              "a": 1,
+                              "b": -1
+                    },
+                    {
+                              "c": 10
+                    }
+          ],
+          [
+                    {
+                              "a": 2,
+                              "b": -1
+                    }
+          ],
+          [
+                    {
+                              "a": 3,
+                              "b": -2
+                    },
+                    {
+                              "d": -10
+                    }
+          ]
+]
 
 ````
 
@@ -307,7 +401,21 @@ Merge object
 
 ```json
 
-[{"a":1,"b":1},{"a":2,"b":2},{"a":3,"b":0,"c":5}]
+[
+          {
+                    "a": 1,
+                    "b": 1
+          },
+          {
+                    "a": 2,
+                    "b": 2
+          },
+          {
+                    "a": 3,
+                    "b": 0,
+                    "c": 5
+          }
+]
 
 ````
 
@@ -330,7 +438,35 @@ Merge object
 
 ```json
 
-[{"a":{"b":{"c":{"d":"e"}}}},{"b":{"c":{"d":{"e":"f"}}}},{"b":{"d":{"e":{"f":"g"}}}}]
+[
+          {
+                    "a": {
+                              "b": {
+                                        "c": {
+                                                  "d": "e"
+                                        }
+                              }
+                    }
+          },
+          {
+                    "b": {
+                              "c": {
+                                        "d": {
+                                                  "e": "f"
+                                        }
+                              }
+                    }
+          },
+          {
+                    "b": {
+                              "d": {
+                                        "e": {
+                                                  "f": "g"
+                                        }
+                              }
+                    }
+          }
+]
 
 ````
 
@@ -378,7 +514,11 @@ Returns the sum of input values
 
 ```json
 
-[1,2,3]
+[
+          1,
+          2,
+          3
+]
 
 ````
 
@@ -414,6 +554,93 @@ MIT
 
 <hr/>
 
+## propertyFilterAgent
+
+### Description
+
+Filter properties based on property name either with 'include' or 'exclude'
+
+### Samples
+
+#### inputs
+
+```json
+
+[
+          {
+                    "color": "red",
+                    "model": "Model 3",
+                    "type": "EV",
+                    "maker": "Tesla",
+                    "range": 300
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{"include":["color","model"]}
+
+````
+
+#### result
+
+```json
+
+{"color":"red","model":"Model 3"}
+
+````
+#### inputs
+
+```json
+
+[
+          {
+                    "color": "red",
+                    "model": "Model 3",
+                    "type": "EV",
+                    "maker": "Tesla",
+                    "range": 300
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{"exclude":["color","model"]}
+
+````
+
+#### result
+
+```json
+
+{"type":"EV","maker":"Tesla","range":300}
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
 ## pushAgent
 
 ### Description
@@ -426,7 +653,13 @@ push Agent
 
 ```json
 
-[[1,2],3]
+[
+          [
+                    1,
+                    2
+          ],
+          3
+]
 
 ````
 
@@ -474,7 +707,13 @@ Pop Agent
 
 ```json
 
-[[1,2,3]]
+[
+          [
+                    1,
+                    2,
+                    3
+          ]
+]
 
 ````
 
@@ -497,7 +736,13 @@ Pop Agent
 
 ```json
 
-[["a","b","c"]]
+[
+          [
+                    "a",
+                    "b",
+                    "c"
+          ]
+]
 
 ````
 
@@ -520,7 +765,18 @@ Pop Agent
 
 ```json
 
-[[1,2,3],["a","b","c"]]
+[
+          [
+                    1,
+                    2,
+                    3
+          ],
+          [
+                    "a",
+                    "b",
+                    "c"
+          ]
+]
 
 ````
 
@@ -568,7 +824,13 @@ shift Agent
 
 ```json
 
-[[1,2,3]]
+[
+          [
+                    1,
+                    2,
+                    3
+          ]
+]
 
 ````
 
@@ -591,7 +853,13 @@ shift Agent
 
 ```json
 
-[["a","b","c"]]
+[
+          [
+                    "a",
+                    "b",
+                    "c"
+          ]
+]
 
 ````
 
@@ -639,7 +907,28 @@ dotProduct Agent
 
 ```json
 
-[[[1,2],[3,4],[5,6]],[[3,2]]]
+[
+          [
+                    [
+                              1,
+                              2
+                    ],
+                    [
+                              3,
+                              4
+                    ],
+                    [
+                              5,
+                              6
+                    ]
+          ],
+          [
+                    [
+                              3,
+                              2
+                    ]
+          ]
+]
 
 ````
 
@@ -655,7 +944,7 @@ dotProduct Agent
 
 ```json
 
-{"contents":[7,17,27]}
+[7,17,27]
 
 ````
 
@@ -735,11 +1024,383 @@ bypass agent
 
 ### Samples
 
+#### inputs
 
+```json
+
+[
+          {
+                    "a": "123"
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+[{"a":"123"}]
+
+````
+#### inputs
+
+```json
+
+[
+          [
+                    {
+                              "a": "123"
+                    },
+                    {
+                              "b": "abc"
+                    }
+          ],
+          [
+                    {
+                              "c": "987"
+                    },
+                    {
+                              "d": "xyz"
+                    }
+          ]
+]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+[[{"a":"123"},{"b":"abc"}],[{"c":"987"},{"d":"xyz"}]]
+
+````
+#### inputs
+
+```json
+
+[
+          [
+                    {
+                              "a": "123"
+                    },
+                    {
+                              "b": "abc"
+                    }
+          ],
+          [
+                    {
+                              "c": "987"
+                    },
+                    {
+                              "d": "xyz"
+                    }
+          ]
+]
+
+````
+
+#### params
+
+```json
+
+{"firstElement":true}
+
+````
+
+#### result
+
+```json
+
+[{"a":"123"},{"b":"abc"}]
+
+````
+#### inputs
+
+```json
+
+[
+          [
+                    {
+                              "a": "123"
+                    },
+                    {
+                              "b": "abc"
+                    }
+          ],
+          [
+                    {
+                              "c": "987"
+                    },
+                    {
+                              "d": "xyz"
+                    }
+          ]
+]
+
+````
+
+#### params
+
+```json
+
+{"flat":1}
+
+````
+
+#### result
+
+```json
+
+[{"a":"123"},{"b":"abc"},{"c":"987"},{"d":"xyz"}]
+
+````
 
 ### Author
 
 Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## countingAgent
+
+### Description
+
+Counting agent
+
+### Samples
+
+#### inputs
+
+```json
+
+[]
+
+````
+
+#### params
+
+```json
+
+{"count":4}
+
+````
+
+#### result
+
+```json
+
+{"list":[0,1,2,3]}
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## copyMessageAgent
+
+### Description
+
+CopyMessage agent
+
+### Samples
+
+#### inputs
+
+```json
+
+[]
+
+````
+
+#### params
+
+```json
+
+{"count":4,"message":"hello"}
+
+````
+
+#### result
+
+```json
+
+{"messages":["hello","hello","hello","hello"]}
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## copy2ArrayAgent
+
+### Description
+
+Copy2Array agent
+
+### Samples
+
+#### inputs
+
+```json
+
+[
+          {
+                    "message": "hello"
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{"count":10}
+
+````
+
+#### result
+
+```json
+
+[{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"},{"message":"hello"}]
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## mergeNodeIdAgent
+
+### Description
+
+merge node id agent
+
+### Samples
+
+#### inputs
+
+```json
+
+[
+          {
+                    "message": "hello"
+          }
+]
+
+````
+
+#### params
+
+```json
+
+{}
+
+````
+
+#### result
+
+```json
+
+{"message":"hello","test":"hello"}
+
+````
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## streamMockAgent
+
+### Description
+
+Sstream mock agent
+
+### Samples
+
+
+
+### Author
+
+xSatoshi Nakajima
 
 ### Repository
 
@@ -805,4 +1466,56 @@ MIT
 
 <hr/>
 
-Done in 1.05s.
+## gloqAgent
+
+### Description
+
+Groq Agent
+
+### Samples
+
+
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+## slashGPTAgent
+
+### Description
+
+Slash GPT Agent
+
+### Samples
+
+
+
+### Author
+
+Receptron team
+
+### Repository
+
+https://github.com/receptron/graphai
+
+
+### License
+
+MIT
+
+
+<hr/>
+
+
