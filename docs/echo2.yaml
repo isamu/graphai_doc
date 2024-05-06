@@ -1,0 +1,10 @@
+version: 0.2
+nodes:
+  node1: 
+    params:
+      message: hello
+    agent: echoAgent
+  node2: 
+    agent: bypassAgent
+    inputs: ["node1"]
+    isResult: true
