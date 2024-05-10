@@ -977,10 +977,10 @@ gopd@^1.0.1:
   dependencies:
     get-intrinsic "^1.1.3"
 
-graphai@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/graphai/-/graphai-0.1.2.tgz#064b82beaeae5930ba657d50577dea9f02070049"
-  integrity sha512-CoY7ZkmxyfZOjJg5FkoiNwMrWpDNwV/NBH9MO9AFirMLdq/u9witBFlpz0C/y6z8oZJRL0Z35BUatx1Wf3d75g==
+graphai@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/graphai/-/graphai-0.3.0.tgz#445df69fd6a73522634b1ccc8b4d10d1140f7fe5"
+  integrity sha512-q8lk/cZzBEa2YxHzkeQNCo9GNgWRxQDhvXDs/byjUfIf8A8l/v5OSX1Zfgc71EqMnNcSB77XW1A2sGLctTvc9Q==
 
 graphemer@^1.4.0:
   version "1.4.0"

@@ -24,6 +24,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "graphai": "^0.1.2"
+    "graphai": "^0.3.0"
   }
 }
