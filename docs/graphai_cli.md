@@ -96,3 +96,9 @@ Available Agents
 * tokenBoundStringsAgent - token bound Agent
 * totalAgent - Returns the sum of input values
 ```
+
+### 独自のGraphファイルを書く
+
+CLI版に含まれているAgentのリストを元に、yaml またはjsonファイルを作成することで、独自のGraph ファイルを作成じて実行することが可能です。
+
+また、公開されているサンプルのyamlファイルを利用することも可能です。
