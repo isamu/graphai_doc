@@ -1,17 +1,19 @@
 # YAMLの書き方
 
 
-## echo 
-GraphAIのYAMLの必須項目はversionとnodesです。
+## echo Agentを使ったGraph作成
+
+echo Agent(指定されたデータを出力するAgent)を使って、簡単なGraphファイルを作ります。
+GraphAIのGraphファイルのYAMLでの必須項目はversionとnodesです。
 
 versionは、0.3を指定します。(2024/05現在)
 
 nodesは、GraphAIで使う各ノードを書いていきます。
-
-まずはGraphAIに含まれているechoAgentを使って簡単なサンプルを作ります。
+このサンプルではnodesにechoAgentを使った１つのnodeを追加します。
 echoAgentはparamsで指定しているユーザからの入力値をそのまま返すAgentです。
-node1というNode名でnodeを追加します。
-このサンプルは`message: hello`というデータをagentの出力として出します。
+
+追加するnodeは、node1というNode名をつけます。
+このnodeは`message: hello`というデータを出力します。
 
 このサンプルのYAMLは１つしかnodeがありませんが、結果を返すnodeはnode1なので、`isResult: true`を追加し、このnodeの結果がこのGraphの結果と指定します。
 
