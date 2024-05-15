@@ -25,14 +25,13 @@ Agentは必ず`AgentFunction`の型で、非同期(`async`)な関数です。
 
 どんなAgentも基本的にはこのように入力値を受け取って、何らかの結果を返す１つの関数です。
 
-続いてagentを含むAgentの情報を追加します。
+続いてagentを含むAgentの情報(AgentFunctionInfo)を追加します。
 ```
 // for test and document
 ```
-以下にテストのサンプル値と、このAgentの情報(`AgentFunctionInfo`)を記載しています。これらを１つにまとめて`export`します。
+以下にテストのサンプル値と、このAgentの情報(`AgentFunctionInfo`)を記載しています。これらを１つにまとめて`export`します。Agentは必ずAgentFunctionInfoで作る必要があります。
 
-サンプル値はUnit test(つまり、サンプルのドキュメントとUnit Testの両方を兼ねています）で使います。
-Agentの情報はこのAgentをパッケージとして利用するときに必要な情報です。
+サンプル値はUnit Test(つまり、サンプルのドキュメントとUnit Testの両方を兼ねています）で使います。
 
 `AgentFunctionInfo`は`default export`します
 
