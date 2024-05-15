@@ -1,13 +1,16 @@
 
 
-# import するファイル
+# importファイル
 
-- GraphAI本体
+###  GraphAI本体
 
 GraphAI本体と、それを動かすのに必要な型情報があります。
+
 ```
 import { GraphData } from "graphai";
 ```
+
+具体的な内容はこちらを確認してください
 
 https://github.com/receptron/graphai/blob/main/src/index.ts
 
