@@ -1,10 +1,10 @@
 # YAMLの書き方
 
 
-## echo Agentを使ったGraph作成
+## echoAgentを使ったGraph作成
 
-echo Agent(指定されたデータを出力するAgent)を使って、簡単なGraphファイルを作ります。
-GraphAIのGraphファイルのYAMLでの必須項目はversionとnodesです。
+echoAgent(指定されたデータを出力するAgent)を使って、簡単なGraphファイルを作ります。
+GraphAIのGraphファイルの必須項目はversionとnodesです。
 
 versionは、0.3を指定します。(2024/05現在)
 
@@ -38,12 +38,13 @@ $ graphai echo.yaml
 
 2行目の`message: hello`が表示されていれば成功です。
 
-## inputs
+## inputsを追加する
 
-次に複数のAgentを組み合わせたYAMLを作ります。
+次に複数のAgentを組み合わせ、inputsで入力を指定したYAMLを作ります。
+入力を指定することで依存関係が定義でき、それによって実行順が制御されます。
 
 bypassAgentは入力値をそのまま出力値で返すAgentです。
-先程のechoのyamlにnode2を追加し、bypassAgentを指定します。
+先程のechoAgentのyamlにnode2を追加します。node2のagentはbypassAgentを指定します。
 入力のinputsとして、前のnode1を指定します。inputsは文字列の配列で、node名を指定します。
 
 今回は出力はbypassAgentのnode2なので、node2に`isResult: true`を指定します。node1のisResultは削除します。
@@ -57,9 +58,13 @@ nodes:
     agent: echoAgent
   node2: 
     agent: bypassAgent
-    inputs: ["node1"]
+    inputs: [":node1"]
     isResult: true
 ```
+
+実行される順に説明すると、
+- node1のechoAgentが実行され、paramsの値を結果として返す
+- node1を入力としているnode、node2が実行される。node2の入力値はnode1の実行結果で、それを入力としてうけとる。node2のbypassAgentは入力値をそのまま結果として返すagentなので、node1の結果をそのまま返す。
 
 これを実行するとnode2の結果として`message: 'hello'`が表示されます。
 また結果はarrayになっています。
@@ -105,10 +110,10 @@ node3の結果として、２つの入力値がそのまま出力されます
 inputsを持つagentは、入力となるnode1, node2のagentの実行結果を待ってから実行します。
 入力のagentがデータベースに接続したり、APIを叩くような時間のかかる処理の場合でも、その前の処理が終わるのを待ってから実行されます。
 
-## node
+## nodeについて
 
-nodeにはcomputed nodeとstatic nodeがあります。
+nodeにはcomputed nodeとstatic nodeの２種類のnodeがあります。
 
-computed nodeは、agentを持つnodeで、agentに指定しているプログラムを実行します。
+computed nodeはagentを持つnodeで、agentに指定しているプログラムを実行します。
 
-static nodeはデータを持つノードです。valueでデータを指定します。いくつかの方法で前のノードなどの値を受け取り、次のnodeにわたすことができます。
+static nodeはデータを持つノードです。valueでデータを指定します。別ページで説明しますが、いくつかの方法で前のノードなどの値を受け取り、次のnodeにわたすことができます。プログラム(agent)は実行しないでデータの受け渡しをするnodeです。
