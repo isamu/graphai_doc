@@ -125,4 +125,24 @@ Unit TestをPassし、期待すべき動作がするようになればAgentは�
 
 
 
+## Agentの実装
+
+sampleAgentでは、Agentの関数で`{ params, inputs }`を受け取りました。
+実際は`AgentFunctionContext`の情報を受け取っています。
+
+- params
+  - GraphDataのyaml/jsonのparamsで与えられる値
+- inputs
+  - GraphDataのinputsで指定される値。前に実行したAgentの結果や、static nodeでの値、inputsに書かれた値など。
+  - inputsはArrayで、入力の数と同じ長さ。
+
+基本的にはこの２つを使います。他
+
+- agentFilters
+  - AgentFilterという仕組みを使う場合に使う
+- debugInfo
+  - debug時などに必要な情報
+
+で、それ以外はNestedGraphで使う特別なデータなので、通常は利用しません。
+
 
