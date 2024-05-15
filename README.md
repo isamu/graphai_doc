@@ -4,7 +4,7 @@
 - [GraphAIとは](./docs/graphai.md)
 - [Cliで使ってみる](./docs/graphai_cli.md)
 - [Yamlの書き方](./docs/yaml.md)
-- Node.jsで使ってみる
+- [Node.jsで使ってみる](./docs/node.md)
 - [Agentのつくりかた](./samples/agents/)
 - AgentFilterのつくりかた
 - Loopについて
