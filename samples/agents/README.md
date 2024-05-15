@@ -113,7 +113,6 @@ yarn run test
 
 でテストを実行します。
 
-
 # 開発
 
 最初にAgentを開発するとき、このディレクトリをコピーし、ベースとして使うと良いです。
@@ -123,9 +122,7 @@ Agent作成に必要な設定は `package.json`, `eslintrc.js`, `.prettierrc`, `
 Unit TestをPassし、期待すべき動作がするようになればAgentは完成です。
 
 
-
-
-## Agentの実装
+## Agentの受け取るデータ
 
 sampleAgentでは、Agentの関数で`{ params, inputs }`を受け取りました。
 実際は`AgentFunctionContext`の情報を受け取っています。
@@ -136,7 +133,8 @@ sampleAgentでは、Agentの関数で`{ params, inputs }`を受け取りまし�
   - GraphDataのinputsで指定される値。前に実行したAgentの結果や、static nodeでの値、inputsに書かれた値など。
   - inputsはArrayで、入力の数と同じ長さ。
 
-基本的にはこの２つを使います。他
+基本的にはこの２つ入力として受け取り、Agentの処理をします。結果はreturnで返します。
+Agentの結果は、次に実行されるAgentのinputsなどで利用されます。(inputの記述方法は別途解説します)
 
 - agentFilters
   - AgentFilterという仕組みを使う場合に使う
