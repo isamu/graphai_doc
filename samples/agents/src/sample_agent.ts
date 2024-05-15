@@ -1,7 +1,7 @@
 import { AgentFunction } from "graphai";
 import { AgentFunctionInfo } from "graphai/lib/type";
 
-export const sampleAgent: AgentFunction = async ({ params, inputs }) => {
+const sampleAgent: AgentFunction = async ({ params, inputs }) => {
   return { params, inputs };
 };
 
