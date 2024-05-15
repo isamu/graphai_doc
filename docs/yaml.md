@@ -4,7 +4,7 @@
 ## echo 
 GraphAIのYAMLの必須項目はversionとnodesです。
 
-versionは、0.2を指定します。(2024/05現在)
+versionは、0.3を指定します。(2024/05現在)
 
 nodesは、GraphAIで使う各ノードを書いていきます。
 
@@ -102,10 +102,6 @@ node3の結果として、２つの入力値がそのまま出力されます
 
 inputsを持つagentは、入力となるnode1, node2のagentの実行結果を待ってから実行します。
 入力のagentがデータベースに接続したり、APIを叩くような時間のかかる処理の場合でも、その前の処理が終わるのを待ってから実行されます。
-
-## debug
-
-TBD
 
 ## node
 
