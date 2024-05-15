@@ -15,8 +15,10 @@ import { GraphData } from "graphai";
 https://github.com/receptron/graphai/blob/main/src/index.ts
 
 
-- Agent
+###  Agent
+
 GraphAIに含まれる全てのAgent。
+
 experimentalと命名しているので、まだ仕様が固まってないAgentです。バージョンアップ時にBreaking Changeすることがあります。
 他のnpmに依存しているので、npmを追加でインストールする必要があります。
 またAPI Keyが必要なものもあるので、設定をしてください。
@@ -25,7 +27,7 @@ experimentalと命名しているので、まだ仕様が固まってないAgent
 import * as agents "graphai/lib/experimental_agents"
 ```
 
-- npm依存のない全てのAgent
+###  npm依存のない全てのAgent
 
 他のnpmに依存していない全てのAgent.
 
@@ -33,9 +35,7 @@ import * as agents "graphai/lib/experimental_agents"
 import * as agents from "graphai/lib/experimental_agents/vanilla";
 ```
 
-- 型ファイル
-
-
+### 型ファイル
 
 ```
 import "graphai/lib/type
@@ -43,8 +43,16 @@ import "graphai/lib/type
 
 graphaでimportできない型情報。GraphAIで使っている型はこのファイルで全て定義されています。
 
+https://github.com/receptron/graphai/blob/main/src/type.ts
 
-## 内部の処理
+
+## 内部の処理の流れ
+
+- GraphDataを読み込む
+- Dataが正しいか確認する
+- 実行順を決める
+- 順次実行する
+- Agentを実行されるときは、AgentFilterがあれば、全てのAgent、もしくは指定されているAgent/NodeでAgentFilterが実行される。
 
 
 ## 関連レポジトリ
