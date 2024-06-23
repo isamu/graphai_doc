@@ -17,15 +17,15 @@ slide: true
 - AI/Rag/DB/APIを複雑に組み合わせた複合AI
 - 実行の順番は？
 - 非同期で効率よく動く？
-- プログラミング、デバックが大変
+- プログラミング,デバックが大変
 
 
 ---
-# 非同期のプログラミング問題
+# 非同期プログラミング問題
 
-![bg left:40% 90%](./async-await.png)
+![bg left:35% 90%](./async-await.png)
 
-- これらの組み合わせだけでも効率よく動くプログラミングをするのは難しい
+- これらの組み合わせだけでも効率良いプログラミングをするのは難しい
 
 ---
 
@@ -73,7 +73,53 @@ slide: true
   - Agentの設定をしておけば、Graphを使うユーザはほぼ意識しなくても良い(透過的)
 
 ----
+# GraphAI　- Agent
+Agent
+```typesctipt
+const sampleAgent: AgentFunction = async ({ params, inputs }) => {
+  return { params, inputs };
+};
+```
+inputs = 前のNodeの結果を受け取る
+param = GraphDataでAgentにわたす値
+結果（次のNodeや出力に渡す値）をreturnする
 
+
+----
+
+# GraphAI - AgentInfo
+```typesctipt
+const sampleAgentInfo: AgentFunctionInfo = {
+  name: "sampleAgent",
+  agent: sampleAgent,
+  samples: [
+    {
+      inputs: sampleInput,
+      result: sampleResult,
+    },
+  ],
+  description: "Sample agent",
+  category: ["LLM"],
+  repository: "https://github.com/isamu/graphai_doc",
+};
+```
+----
+# GraphAI - GraphData
+```YAML
+version: 0.5
+nodes:
+  echo:
+    agent: "echoAgent"
+    params:
+      message: "echo"
+  bypass:
+    agent: "bypassAgent"
+    inputs: [:echo]
+    isResult: true
+```
+echo nodeでechoというメッセージを作成、bypass nodeがそれを受け取り、結果として出力
+
+----
 
   # GraphAI アプリケーション例
 

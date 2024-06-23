@@ -1,6 +1,5 @@
 # YAMLの書き方
 
-
 ## echoAgentを使ったGraph作成
 
 echoAgent(指定されたデータを出力するAgent)を使って、簡単なGraphファイルを作ります。
