@@ -32,10 +32,12 @@ slide: true
 # 実行時間/実行場所の問題
 
 - １つ１つが20秒かかる場合、４０個組み合わせると１３分かかる
+  - 非同期、並列実行は必須
 - １つ１つの処理が独立しているほうがよい
    - timeout/実行状況の把握
+   - テストしやすい
 - クライアント(ブラウザ), サーバで分散させたい
-- バッチやAPI化する場合はサーバで動かしたい
+- バッチやAPI化する場合は、全てサーバで動かしたい
 
 
 ---
@@ -45,19 +47,20 @@ slide: true
 - TypeScriptで書かれたデータフロープログラミング
 
   - Graph=グラフ理論のグラフ（not 円グラフ、棒グラフ)
-  - 有向非巡回グラフ
+    - 有向非巡回グラフ
   - Node(Agent)とEdge(矢印=データの流れ)
-  - Agentが１つのNode
-    - Agent = LLM/Rag/APIなどのプログラミングを実行する関数
+  - Agentが１つのNodeに対応
+    - Agent = LLM/Rag/APIなど実行する１つの関数
     - Agentの動作結果を次のAgentの入力として渡す
 ---
 
 # GraphAI - TypeScript
 
 - AgentはTypeScript
-  - サーバ(Node)とブラウザで同じコードがそのまま動く
-    - ブラウザでデバック、開発できる
-  - NodeでPCの開発も可能
+  - サーバ(Node.js)とブラウザで同じコードがそのまま動く
+    - ブラウザで動作、デバックできる
+  - Node.jsでPCの開発も可能
+  - Agent単体でテスト可能。再利用が容易
 - GraphData
   - YAML/JSON 構造化されたデータならなんでもOK
 
@@ -71,6 +74,20 @@ slide: true
   - データの単純な処理はブラウザ
   - DBへのアクセスはサーバ
   - Agentの設定をしておけば、Graphを使うユーザはほぼ意識しなくても良い(透過的)
+
+----
+
+# GraphAI - サーバ クライアント
+
+- Agent
+  - AgentInfoを整備しておく
+- Server
+  - GraphAIのサーバ仕様に合わせる
+  - Agent一覧を返すAPI + 各Agentを実行するAPI
+- 標準化に合わせて実装しておけば、設定いらずで動的な切り替えが可能
+- このインタフェースに合わせておけばサーバはPythonなどでもOK
+- Streamも対応
+
 
 ----
 # GraphAI　- Agent
@@ -91,8 +108,8 @@ param = GraphDataでAgentにわたす値
 ```typesctipt
 const sampleAgentInfo: AgentFunctionInfo = {
   name: "sampleAgent",
-  agent: sampleAgent,
-  samples: [
+  agent: sampleAgent, // agent関数
+  samples: [  // DocumentやUnit test用のサンプル
     {
       inputs: sampleInput,
       result: sampleResult,
@@ -122,6 +139,8 @@ echo nodeでechoというメッセージを作成、bypass nodeがそれを受�
 ----
 
   # GraphAI アプリケーション例
+
+
 
 ----
 
