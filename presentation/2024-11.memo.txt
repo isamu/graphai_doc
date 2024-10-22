@@ -18,9 +18,17 @@ GraphAIの概要
     - NestedAgentという仕組みがある
       - Nestedさせる
       - Mapさせる
+ - Agentの作り方
+ - GraphDataの作り方
+ - Inputsについて
+ - Nestedについて
+ - loop/if/unless/anyInputs
+ 
  - どんな環境でもシームレスに、忍者のように動く
    - TypeScriptなので、環境依存の関数を使っていなければ、サーバ、クライアントのどこでも動く
      - file/path/os/processなど？
+   - GraphAI/Agentそれぞれ動く
+   
    - それぞれが単機能なので、テスト、デバックしやすい。
    - Agentの入力/出力をhttpのPostData/responseに対応させる
      - Agentのデータやり取りの標準化
@@ -41,9 +49,13 @@ GraphAIの概要
    - sakana AIのai-agent
  - Agentの作り方
  - AgentFunctionInfoの紹介
- - 分散Agentサーバ
+   - cliのドキュメント
+   - webドキュメント
+   - unit test
+   - データ型のvalidation(agent filter<-これなんだっけ？）
  - 開発に参加するには？
  - 使うときのサポート。
+ - 分散Agentサーバ
  - Future
 
 --
