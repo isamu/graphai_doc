@@ -1,0 +1,89 @@
+
+GraphAIの概要
+ - GraphData/Agentの説明
+ - 動かし方の紹介
+   - CLIとTypeScript
+ - CLIの動かしかた説明
+   - npmのインストール
+   - graph dataの取ってくる方法
+   - cliのコマンド
+   - option
+ - TypeScriptでの動かし方説明
+   - new Graph(); run
+   - graphData, Agentの簡単な紹介
+ - Agentの簡単な紹介
+    - 一覧
+    - inputs/paramsを受け取って、結果を返す（ここ重要、後で出てきます）
+    - (GraphAI本体は、GraphDataを使って、その結果と動作を制御)
+    - NestedAgentという仕組みがある
+      - Nestedさせる
+      - Mapさせる
+ - どんな環境でもシームレスに、忍者のように動く
+   - TypeScriptなので、環境依存の関数を使っていなければ、サーバ、クライアントのどこでも動く
+     - file/path/os/processなど？
+   - それぞれが単機能なので、テスト、デバックしやすい。
+   - Agentの入力/出力をhttpのPostData/responseに対応させる
+     - Agentのデータやり取りの標準化
+     - そのhttpの仕様に一致していれば、どこでも動く＆なんでも動く
+     - GraphAIの仕様に合わせてAgentを作れば、それがネット対応のagentになる
+     - Agentの分散化
+ - TypeScriptでの構成解説
+   - Agentは
+   - バッチ
+     - 
+   - 、サーバ、サーバクライアント
+   - クライアントのみ・local ollama
+ - 他特徴
+   - streaming
+   - agnent filter
+   - TypeScript以外で書かれたAgentを使う方法
+ - サンプルアプリケーションの紹介
+   - sakana AIのai-agent
+ - Agentの作り方
+ - AgentFunctionInfoの紹介
+ - 分散Agentサーバ
+ - 開発に参加するには？
+ - 使うときのサポート。
+ - Future
+
+--
+GraphAI
+
+- TypeScriptで書かれたAgent
+  - LLM
+  - Fetch (http client)
+  - S3 Client  
+- GraphData
+  - Yaml/JSON（もしくはTypeScriptのコード）で書かれたGraph構造を定義するData（ノードと入力）
+  - Node / Inputs(Edge)
+
+GraphDataのNodeがAgentに対応する
+
+--
+
+動かし方
+  - CLIとTypeScriptで動かす
+    - ともにnpmのパッケージで提供
+
+Cliの使い方
+
+TypeScriptでの使い方
+
+new GraphAI();
+run
+---
+Cliの使い方
+
+---
+TypeScriptでの使い方を丁寧に
+ npmのインストール
+ graph dataの取ってくる方法
+ 実際の動かし方
+
+--
+Agentの簡単な紹介
+
+---
+
+Agentの作り方
+
