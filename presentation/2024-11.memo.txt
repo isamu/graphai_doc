@@ -1,3 +1,8 @@
+- 簡単な説明
+- static node
+- nestedのinputs
+- inputsまわり
+
 
 GraphAIの概要
  - GraphData/Agentの説明
@@ -57,6 +62,8 @@ GraphAIの概要
  - 使うときのサポート。
  - 分散Agentサーバ
  - Future
+
+--
 
 --
 GraphAI
