@@ -1,8 +1,4 @@
-import "dotenv/config";
-import { GraphAI, assert } from "graphai";
-import * as vanillaAgents from "@graphai/vanilla";
-import { openAIAgent } from "@graphai/openai_agent";
-import { anthropicAgent } from "@graphai/anthropic_agent";
+import { main } from "./runner";
 
 export const parallelLlmGraphData = {
   version: 0.5,
@@ -73,16 +69,6 @@ baseUrl: "http://localhost:11434",
   },
 };
 
-const main = async () => {
-  const graphai = new GraphAI(parallelLlmGraphData, {
-    ...vanillaAgents,
-    openAIAgent,
-    anthropicAgent,
-  });
-  const result = await graphai.run();
-  console.log(JSON.stringify(result, null, 2));
-};
-
 if (process.argv[1] === __filename) {
-  main();
+  main(parallelLlmGraphData);
 }
