@@ -4,7 +4,7 @@ import * as vanillaAgents from "@graphai/vanilla";
 import { openAIAgent } from "@graphai/openai_agent";
 import { anthropicAgent } from "@graphai/anthropic_agent";
 
-const parallelLlmGraphData = {
+export const parallelLlmGraphData = {
   version: 0.5,
   nodes: {
     llmParams: {
@@ -83,4 +83,6 @@ const main = async () => {
   console.log(JSON.stringify(result, null, 2));
 };
 
-main();
+if (process.argv[1] === __filename) {
+  main();
+}
