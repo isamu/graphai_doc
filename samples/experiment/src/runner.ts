@@ -13,4 +13,3 @@ export const main = async (graphData: GraphData) => {
   const result = await graphai.run();
   console.log(JSON.stringify(result, null, 2));
 };
-

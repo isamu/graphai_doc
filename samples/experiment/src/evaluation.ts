@@ -28,10 +28,7 @@ export const evaluationGraphData = {
           "### question",
           ":prompt",
         ],
-        prompt: [
-          "### answers",
-          ":llms.data.toJSON()"
-        ],
+        prompt: ["### answers", ":llms.data.toJSON()"],
         response_format: {
           type: "json_schema",
           json_schema: {
@@ -40,20 +37,20 @@ export const evaluationGraphData = {
               type: "object",
               properties: {
                 name: { type: "string" },
-                reason: { type: "string" }
+                reason: { type: "string" },
               },
               required: ["name", "reason"],
-              additionalProperties: false
+              additionalProperties: false,
             },
-            strict: true
-          }
+            strict: true,
+          },
         },
       },
       output: {
-        data: ".text.jsonParse()"
+        data: ".text.jsonParse()",
       },
     },
-  }
+  },
 };
 
 if (process.argv[1] === __filename) {
