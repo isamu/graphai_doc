@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "llm": "npx ts-node src/llms.ts",
+    "evaluation": "npx ts-node src/evaluation.ts",
     "format": "prettier --write '{src,scripts,assets/templates,draft,ideason,scripts_mag2,proto,test,graphai,output,docs/scripts}/**/*.{ts,json,yaml}'"
   },
   "author": "",
