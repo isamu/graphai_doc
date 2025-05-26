@@ -1,0 +1,46 @@
+GUIでのGraphの構築
+ブラウザの入力とGraphのNodeを同期させて必要な箇所でブラウザイベント
+Toolsと連携してブラウザ操作
+非同期Streaming
+
+
+express
+stream系
+event系
+各種llm/データ処理
+
+
+Node.js(サーバとブラウザの両方で動く）
+ワークフローとAgentの実装の分離
+ワークフローで呼び出すNode(Agent）をNode単位で実行先を指定できる
+- ブラウザで動かす
+- サーバで動かす
+- localのollamaを呼ぶ
+Agentが、
+API Specを持っている
+Agentのメタデータを持っていて、web apiで一覧を取れる
+SSEやREST APIで呼び出せる
+api呼び出しでagentごとに任意の認証を追加できる
+map/nestedで複雑な処理もできる
+nested agentの仕組みを使ってgraphの再利用化
+ユーザの入力
+ユーザとのinteraction
+agent filterを含む、仕組み
+Grapys
+- GUIツール
+- 単純なワークフローはGUIで作れる！！
+- Localでvueを動かせば、ブラウザからllm(openaiなど）を呼び出すので、簡単に試せる
+- 生成したGraphDataはダウンロートしてアプリに組み込める
+nest/ input/ event
+
+Demo
+- 紹介
+	- サーバとクライアントの実装別れている
+	- 複数のサーバで分散できる
+- Stream
+- サーバとの切り替え
+- ステップ実行
+- 入力系
+- Google Map
+- Grapys
+	- GUIとGraph data相互にいける
