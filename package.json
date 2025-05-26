@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pdf": "npx @marp-team/marp-cli@latest  --allow-local-files presentation/2025-05.md  -o presentation/2025-05.pdf",
     "pdf2": "npx @marp-team/marp-cli@latest  presentation/2024-11.md  -o presentation/2024-11.pdf",
-    "pdf": "npx @marp-team/marp-cli@latest  --allow-local-files presentation/2024-11-2.md  -o presentation/2024-11-2.pdf"
+    "pdf3": "npx @marp-team/marp-cli@latest  --allow-local-files presentation/2024-11-2.md  -o presentation/2024-11-2.pdf"
   },
   "repository": "git@github.com:isamu/graphai_doc.git",
   "author": "isamu <isamu@to-kyo.to>",
