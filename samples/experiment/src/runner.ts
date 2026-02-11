@@ -1,4 +1,5 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ quiet: true });
 import { GraphAI, assert, GraphData } from "graphai";
 import * as vanillaAgents from "@graphai/vanilla";
 import { openAIAgent } from "@graphai/openai_agent";
